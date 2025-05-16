@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>메탈슬러그2 - EmulatorJS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #game {
+            width: 100%;
+            max-width: 960px;
+            aspect-ratio: 4 / 3;
+            background: black;
+        }
+    </style>
+    <link rel="icon" href="#" />
+</head>
+<body>
+    <div id="game"></div>
+
+    <script>
+        window.EJS_player = "#game";
+        window.EJS_core = "arcade";
+        window.EJS_gameName = "메탈슬러그2";
+        window.EJS_color = "#0064ff";
+        window.EJS_startOnLoaded = true;
+        window.EJS_pathtodata = "https://cdn.emulatorjs.org/stable/data/";
+        window.EJS_gameUrl = "mslug2.zip";
+
+        // 성능 최적화 옵션
+        window.EJS_light = true;
+        window.EJS_Buttons = {
+            playPause: false,
+            restart: false,
+            mute: false,
+            settings: false,
+            fullscreen: false,
+            saveState: false,
+            loadState: false,
+            screenRecord: false,
+            gamepad: true,
+            cheat: false,
+            volume: false,
+            saveSavFiles: false,
+            loadSavFiles: false,
+            quickSave: false,
+            quickLoad: false,
+            screenshot: false,
+            cacheManager: false,
+            exitEmulation: false
+        };
+    </script>
+
+    <script src="https://www.emulatorjs.com/loader.js"></script>
+</body>
+</html>
