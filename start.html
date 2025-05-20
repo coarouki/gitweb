@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="emulatorjs.css" rel="stylesheet">
+    <link rel="icon" href="#" />
+    <title>MAMEACADE</title>
+</head>
+<body>
+    <div style="position:fixed;left:0px;right:0px;top:0px;bottom:0px;">
+        <div id="game"></div>
+    </div>
+    <script src="emulator.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var EJS_DEBUG_ = false;
+        var EJS_EMU = new EJS('#game',{
+            gameUrl:'roms/kof97.zip',
+            system:'mame2003',
+            gameId:'', //set Unique ID on Netplay
+            biosUrl:'bios/arcade.7z', //set bios
+            gameParentUrl:'',
+            gamePatchUrl:'', //add ips .. game patch
+            touchControls: false
+        });        
+    </script>
+</body>
+</html>
