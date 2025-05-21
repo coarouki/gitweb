@@ -42,7 +42,7 @@
 <body>
   <!-- LG 로고 화면 -->
   <div id="logo">
-    <img src="docs/lg-logo-grey.png" alt="LG Logo" />
+    <img src="./docs/lg-logo-grey.png" alt="LG Logo" />
   </div>
 
   <!-- EmulatorJS 로드 영역 -->
@@ -52,6 +52,8 @@
   </div>
 
   <script>
+    const params = new URLSearchParams(window.location.search);
+    const game = params.get("game");
     // 5초 뒤 게임 시작
     setTimeout(() => {
       document.getElementById('logo').style.display = 'none';
@@ -60,7 +62,9 @@
       emulatorDiv.style.display = 'block';
 
       // 이 경로는 EmulatorJS에서 게임을 직접 로딩할 수 있도록 구성되어 있어야 함
-      emulatorFrame.src = `start.html`;
+      const gameFile = "${game}";
+      emulatorFrame.src = `start.html?game=${encodeURIComponent(gameFile)}`;
+      //emulatorFrame.src = `start.html`;
     }, 5000);
   </script>
 </body>
