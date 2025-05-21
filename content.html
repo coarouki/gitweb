@@ -133,8 +133,13 @@
             }, '*');
             initSent = true;
           }
-          document.querySelector('#ejs-start-game').style
-            .display = 'block';
+          //document.querySelector('#ejs-start-game').style.display = 'block';
+          // START 버튼 표시 제거 → 자동 실행 추가          
+          setTimeout(() => {
+            gameFrame.contentWindow.postMessage({
+              'act': 'ejs-game-start'
+            }, '*');
+          }, 500);
         }
         if (e.data.act == 'ejs-game-started') {
           if (e.source != gameFrame.contentWindow)
@@ -204,14 +209,13 @@
       }
       return false;
     };
+    
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' && document.querySelector('#ejs-start-game')) {
-        const playBtn = document.querySelector('#ejs-start-game');
-        if (playBtn.style.display !== 'none') {
-          playBtn.click();
-        }
-      }
+      gameFrame.contentWindow.postMessage( {
+        act: "ejs-game-start",
+      }, "*");
     });
+
     // 터치로 시작
     document.addEventListener('touchstart', function(e) {
       const playBtn = document.querySelector('#ejs-start-game');
