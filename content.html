@@ -75,9 +75,10 @@
       <iframe src="ad.html?domain=" width="300px" height="250px" frameborder="no" scrolling="no"
         sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts"></iframe>
       <a href="#" class="ad-close"></a>
+    </div>
+    <div style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);z-index: 1;">
+      <a href="#" id="ejs-start-game" style="display:none">START</a>
     </div-->
-    <div style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);z-index: 1;"><a href="#"
-        id="ejs-start-game" style="display:none">START</a></div>
     <div id="select-disc"
       style="display:none;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);z-index: 1;background: rgba(0,0,0,0.8);max-width: 300px;color: #fff;min-width: 200px;text-align: center;font-weight: 700;">
       <div style="padding:10px">
@@ -110,9 +111,9 @@
               } catch (e) {}
             });
           }
-          if (options.color) {
-            document.querySelector('#ejs-start-game').style.backgroundColor = options.color;
-          }
+          //if (options.color) {
+          //  document.querySelector('#ejs-start-game').style.backgroundColor = options.color;
+          //}
           if (gameFrameReady && !initSent) {
             gameFrame.contentWindow.postMessage({
               'act': 'ejs-game-init',
@@ -134,7 +135,7 @@
             initSent = true;
           }
           document.querySelector('#ejs-start-game').style
-            .display = 'block';
+            .display = 'none';
         }
         if (e.data.act == 'ejs-game-started') {
           if (e.source != gameFrame.contentWindow)
@@ -188,22 +189,22 @@
         }
       }
     });
-    document.querySelector('#ejs-start-game').style.display = 'none';
+    //document.querySelector('#ejs-start-game').style.display = 'none';
     window.parent.postMessage({
       'act': 'ejs-ready'
     }, '*');
-    document.querySelector('#ejs-start-game').onclick = function () {
-      gameFrame.contentWindow.postMessage({
-        'act': 'ejs-game-start'
-      }, '*');
-      if (document.querySelector('#ejs-start-game').remove) {
-        document.querySelector('#ejs-start-game').remove();
-      } else {
-        document.querySelector('#ejs-start-game').parentNode
-          .removeChild(document.querySelector('#ejs-start-game'));
-      }
-      return false;
-    };
+    //document.querySelector('#ejs-start-game').onclick = function () {
+    //  gameFrame.contentWindow.postMessage({
+    //    'act': 'ejs-game-start'
+    //  }, '*');
+    //  if (document.querySelector('#ejs-start-game').remove) {
+    //    document.querySelector('#ejs-start-game').remove();
+    //  } else {
+    //    document.querySelector('#ejs-start-game').parentNode
+    //      .removeChild(document.querySelector('#ejs-start-game'));
+    //  }
+    //  return false;
+    //};
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Enter' && document.querySelector('#ejs-start-game')) {
         const playBtn = document.querySelector('#ejs-start-game');
@@ -212,13 +213,24 @@
         }
       }
     });
-    // 터치로 시작
-    document.addEventListener('touchstart', function(e) {
-      const playBtn = document.querySelector('#ejs-start-game');
-      if (playBtn && playBtn.style.display !== 'none') {
-        playBtn.click();
+    
+    if (e.data.act == 'ejs-gameframe-ready' && e.source == gameFrame.contentWindow) {
+      gameFrameReady = true;
+
+      if (!initSent) {
+        gameFrame.contentWindow.postMessage({
+          'act': 'ejs-game-init',
+          'options': options,
+          'script': script
+        }, '*');
+        initSent = true;
       }
-    }, { once: true }); // 터치 이벤트는 한 번만 작동하게
+
+      // START 버튼 표시 제거 → 자동 실행 추가
+      gameFrame.contentWindow.postMessage({
+        'act': 'ejs-game-start'
+      }, '*');
+    }
   </script>
 </body>
 
