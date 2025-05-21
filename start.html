@@ -17,8 +17,8 @@
         const params = new URLSearchParams(window.location.search);
         const gameFile = params.get("game");
 
-        if (gameName){ 
-            const romPath = `./roms/${gameName}.zip`;  // zip 확장자는 내부에서 붙임
+        if (gameFile){ 
+            const romPath = `./roms/${gameFile}.zip`;  // zip 확장자는 내부에서 붙임
         
 
         var EJS_DEBUG_ = false;
