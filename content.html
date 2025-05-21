@@ -2,9 +2,9 @@
 <html lang="en" style="height:100%">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MAMEACADE</title>
   <link rel="prefetch" href="extractor-new.js" />
   <link rel="prefetch" href="extractor-new.wasm" />
@@ -40,7 +40,7 @@
       color: #fff !important;
       border-radius: 35px;
       text-align: center;
-      background-color: rgb(26, 175, 255)
+      background-color: rgb(26, 175, 255);
     }
 
     #ejs-start-game:hover {
@@ -63,24 +63,33 @@
       border-radius: 0;
       color: #fff;
       text-decoration: none;
-    }    
+    }
   </style>
 </head>
 
 <body style="border:none;margin:0;height: 100%;width: 100%;">
-  <div class style="height: 100%;">
-    <iframe id="game-frame" src="game.html" width="100%" height="100%" frameborder="no" allowtransparency="true"
-      allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
+  <div style="height: 100%;">
+    <iframe
+      id="game-frame"
+      src="game.html"
+      width="100%"
+      height="100%"
+      frameborder="no"
+      allowtransparency="true"
+      allowfullscreen="true"
+      webkitallowfullscreen="true"
+      mozallowfullscreen="true"
+      scrolling="no"
+    ></iframe>
     <!--div class="frame-2">
       <iframe src="ad.html?domain=" width="300px" height="250px" frameborder="no" scrolling="no"
         sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts"></iframe>
       <a href="#" class="ad-close"></a>
-    </div>
-    <div style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);z-index: 1;">
-      <a href="#" id="ejs-start-game" style="display:none">START</a>
     </div-->
-    <div id="select-disc"
-      style="display:none;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);z-index: 1;background: rgba(0,0,0,0.8);max-width: 300px;color: #fff;min-width: 200px;text-align: center;font-weight: 700;">
+    <div
+      id="select-disc"
+      style="display:none;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);z-index: 1;background: rgba(0,0,0,0.8);max-width: 300px;color: #fff;min-width: 200px;text-align: center;font-weight: 700;"
+    >
       <div style="padding:10px">
         <h3>Select Disc</h3>
         <ul id="disc-list" style="list-style: none;margin: 0;padding: 0;"></ul>
@@ -90,19 +99,19 @@
   <script>
     let gameFrameReady = false;
     let initSent = false;
-    let gameFrame = document.querySelector('#game-frame');
+    let gameFrame = document.querySelector("#game-frame");
     let options = {};
-    let script = '';
+    let script = "";
     let settings = {};
-    let url = '';
-    window.addEventListener('message', function (e) {
-      if (typeof e.data == 'object') {
-        if (e.data.act == 'ejs-setup' && e.source == window
-          .parent) {
+    let url = "";
+
+    window.addEventListener("message", function (e) {
+      if (typeof e.data == "object") {
+        if (e.data.act == "ejs-setup" && e.source == window.parent) {
           options = e.data.options;
           script = e.data.script;
           settings = e.data.settings;
-          if (typeof settings == 'object') {
+          if (typeof settings == "object") {
             Object.keys(settings).forEach(function (k, i) {
               try {
                 if (!localStorage.getItem(k) && settings[k]) {
@@ -111,126 +120,101 @@
               } catch (e) {}
             });
           }
-          //if (options.color) {
-          //  document.querySelector('#ejs-start-game').style.backgroundColor = options.color;
-          //}
+          if (options.color) {
+            // 제거된 버튼이므로 색 변경은 불필요
+            // document.querySelector('#ejs-start-game').style.backgroundColor = options.color;
+          }
           if (gameFrameReady && !initSent) {
-            gameFrame.contentWindow.postMessage({
-              'act': 'ejs-game-init',
-              'options': options,
-              'script': script
-            }, '*');
+            gameFrame.contentWindow.postMessage(
+              {
+                act: "ejs-game-init",
+                options: options,
+                script: script,
+              },
+              "*"
+            );
             initSent = true;
           }
         }
-        if (e.data.act == 'ejs-gameframe-ready' && e.source ==
-          gameFrame.contentWindow) {
+        if (e.data.act == "ejs-gameframe-ready" && e.source == gameFrame.contentWindow) {
           gameFrameReady = true;
+
           if (!initSent) {
-            gameFrame.contentWindow.postMessage({
-              'act': 'ejs-game-init',
-              'options': options,
-              'script': script
-            }, '*');
+            gameFrame.contentWindow.postMessage(
+              {
+                act: "ejs-game-init",
+                options: options,
+                script: script,
+              },
+              "*"
+            );
             initSent = true;
           }
-          document.querySelector('#ejs-start-game').style
-            .display = 'none';
+
+          // START 버튼 없애고 자동 실행 메시지 바로 전송
+          gameFrame.contentWindow.postMessage(
+            {
+              act: "ejs-game-start",
+            },
+            "*"
+          );
         }
-        if (e.data.act == 'ejs-game-started') {
-          if (e.source != gameFrame.contentWindow)
-            return false;
-          //document.querySelector('.ad-close').style
-            //.display = "inline-block";
-          //document.querySelector('.ad-close').onclick =
-            //function () {
-              //document.querySelector(
-                //  '.frame-2')
-                //.style.display = 'none';
-              //return false;
-            //};
-          window.parent.postMessage({
-            'act': 'ejs-game-started'
-          }, '*');
+        if (e.data.act == "ejs-game-started") {
+          if (e.source != gameFrame.contentWindow) return false;
+          /*
+          // 광고 닫기 관련 코드 주석 유지
+          window.parent.postMessage(
+            {
+              act: "ejs-game-started",
+            },
+            "*"
+          );
           setTimeout(function () {
-            document.querySelector(
-                '.frame-2'
-              ).style
-              .display =
-              'none';
+            document.querySelector(".frame-2").style.display = "none";
           }, 1000);
+          */
         }
-        if (e.data.act == 'ejs-enterfullscreen' && e.source ==
-          window.parent) {
+        if (e.data.act == "ejs-enterfullscreen" && e.source == window.parent) {
           gameFrame.contentWindow.postMessage({
-            'act': 'ejs-enterfullscreen'
-          }, '*');
+            act: "ejs-enterfullscreen",
+          }, "*");
         }
-        if (e.data.act == 'ejs-exitfullscreen' && e.source ==
-          window.parent) {
+        if (e.data.act == "ejs-exitfullscreen" && e.source == window.parent) {
           gameFrame.contentWindow.postMessage({
-            'act': 'ejs-exitfullscreen'
-          }, '*');
+            act: "ejs-exitfullscreen",
+          }, "*");
         }
-        if (e.data.act == 'ejs-idb-1' && e.source == window
-          .parent) {
-          gameFrame.contentWindow.postMessage({
-            'act': 'ejs-idb-1',
-            'path': e.data.path,
-            'data': e.data.data
-          }, '*');
+        if (e.data.act == "ejs-idb-1" && e.source == window.parent) {
+          gameFrame.contentWindow.postMessage(
+            {
+              act: "ejs-idb-1",
+              path: e.data.path,
+              data: e.data.data,
+            },
+            "*"
+          );
         }
-        if (e.data.act == 'ejs-ready-start' && e.source ==
-          window.parent) {
-          gameFrame.contentWindow.postMessage({
-            'act': 'ejs-ready-start',
-            'args': e.data.args
-          }, '*');
+        if (e.data.act == "ejs-ready-start" && e.source == window.parent) {
+          gameFrame.contentWindow.postMessage(
+            {
+              act: "ejs-ready-start",
+              args: e.data.args,
+            },
+            "*"
+          );
         }
       }
     });
-    //document.querySelector('#ejs-start-game').style.display = 'none';
-    window.parent.postMessage({
-      'act': 'ejs-ready'
-    }, '*');
-    //document.querySelector('#ejs-start-game').onclick = function () {
-    //  gameFrame.contentWindow.postMessage({
-    //    'act': 'ejs-game-start'
-    //  }, '*');
-    //  if (document.querySelector('#ejs-start-game').remove) {
-    //    document.querySelector('#ejs-start-game').remove();
-    //  } else {
-    //    document.querySelector('#ejs-start-game').parentNode
-    //      .removeChild(document.querySelector('#ejs-start-game'));
-    //  }
-    //  return false;
-    //};
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' && document.querySelector('#ejs-start-game')) {
-        const playBtn = document.querySelector('#ejs-start-game');
-        if (playBtn.style.display !== 'none') {
-          playBtn.click();
-        }
-      }
-    });
-    
-    if (e.data.act == 'ejs-gameframe-ready' && e.source == gameFrame.contentWindow) {
-      gameFrameReady = true;
 
-      if (!initSent) {
-        gameFrame.contentWindow.postMessage({
-          'act': 'ejs-game-init',
-          'options': options,
-          'script': script
-        }, '*');
-        initSent = true;
-      }
+    // START 버튼 제거해서 관련 이벤트 삭제 (키보드, 터치)
 
-      // START 버튼 표시 제거 → 자동 실행 추가
-      gameFrame.contentWindow.postMessage({
-        'act': 'ejs-game-start'
-      }, '*');
-    }
+    // 부모에게 준비 완료 메시지 전송
+    window.parent.postMessage(
+      {
+        act: "ejs-ready",
+      },
+      "*"
+    );
   </script>
 </body>
 
