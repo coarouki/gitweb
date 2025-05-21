@@ -21,16 +21,16 @@
             const romPath = `./roms/${gameFile}.zip`;  // zip 확장자는 내부에서 붙임
         
 
-        var EJS_DEBUG_ = false;
-        var EJS_EMU = new EJS('#game',{
-            gameUrl:romPath,
-            system:'mame2003',
-            gameId:'', //set Unique ID on Netplay
-            biosUrl:'bios/arcade.7z', //set bios
-            gameParentUrl:'',
-            gamePatchUrl:'', //add ips .. game patch
-            touchControls: false
-        });        
+            var EJS_DEBUG_ = false;
+            var EJS_EMU = new EJS('#game',{
+                gameUrl:romPath,
+                system:'mame2003',
+                gameId:'', //set Unique ID on Netplay
+                biosUrl:'bios/arcade.7z', //set bios
+                gameParentUrl:'',
+                gamePatchUrl:'', //add ips .. game patch
+                touchControls: false
+            });        
         }
         else {
             alert("게임 이름이 제공되지 않았습니다.");
