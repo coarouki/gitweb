@@ -16,34 +16,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="emulatorjs.css" rel="stylesheet">
     <link rel="icon" href="#" />
-    <title>MAMEACADE</title>
-    <style>    
-    #loader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: transparent;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
-
-    #loader img {
-      width: 256px;
-      height: 256px;
-    }
-  </style>
+    <title>MAMEACADE</title>    
 </head>
 <body>
     <div style="position:fixed;left:0px;right:0px;top:0px;bottom:0px;">
-        <div id="game"></div>
-        <!-- 로딩 GIF -->
-        <div id="loader">
-            <img src="./docs/loading.gif" alt="로딩 중..." />
-        </div>
+        <div id="game"></div>        
     </div>
     <script src="emulator.js" type="text/javascript"></script>
     <script type="text/javascript">
@@ -68,14 +45,6 @@
         else {
             alert("게임 이름이 제공되지 않았습니다.");
         }
-        window.addEventListener('message', function (e) {
-            if (typeof e.data == 'object') {
-                if (e.data.act == 'ejs-ejs-game-started') {
-                    const loader = document.getElementById('loader');
-                    if (loader) loader.remove(); // 로딩 제거
-                }
-                }
-            });
     </script>
 </body>
 </html>
