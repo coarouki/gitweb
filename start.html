@@ -41,7 +41,28 @@
                 gameParentUrl:'',
                 gamePatchUrl:'', //add ips .. game patch
                 touchControls: false
-            });        
+            });   
+            
+            EJS_Buttons = {
+                playPause: false,
+                restart: false,
+                mute: false,
+                settings: true,
+                fullscreen: false,
+                saveState: false,
+                loadState: false,
+                screenRecord: false,
+                gamepad: true,
+                cheat: false,
+                volume: false,
+                saveSavFiles: false,
+                loadSavFiles: false,
+                quickSave: false,
+                quickLoad: false,
+                screenshot: false,
+                cacheManager: false,
+                exitEmulation: false
+            };     
         }
         else {
             alert("게임 이름이 제공되지 않았습니다.");
