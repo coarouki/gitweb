@@ -7,11 +7,33 @@
     <link href="emulatorjs.css" rel="stylesheet">
     <link rel="icon" href="#" />
     <title>MAMEACADE</title>
-    
+    <style>    
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    #loader img {
+      width: 256px;
+      height: 256px;
+    }
+  </style>
 </head>
 <body>
     <div style="position:fixed;left:0px;right:0px;top:0px;bottom:0px;">
         <div id="game"></div>
+        <!-- 로딩 GIF -->
+        <div id="loader">
+            <img src="../docs/loading.gif" alt="로딩 중..." />
+        </div>
     </div>
     <script src="emulator.js" type="text/javascript"></script>
     <script type="text/javascript">
