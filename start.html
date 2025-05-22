@@ -68,6 +68,12 @@
         else {
             alert("게임 이름이 제공되지 않았습니다.");
         }
+        window.addEventListener('message', function(e) {
+          if (e.data['act'] == 'ejs-game-start') {
+            const loader = document.getElementById('loader');
+            if (loader) loader.remove(); // 로딩 제거
+          }
+        });
     </script>
 </body>
 </html>
