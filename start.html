@@ -2,6 +2,16 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self' data: blob: file:;
+    img-src 'self' data: blob: file:;
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data: file:;
+    style-src 'self' 'unsafe-inline';
+    frame-src 'self' blob: data:;
+    connect-src 'self' blob: data:;
+    media-src 'self' blob: data: file:;
+    object-src 'none';
+    base-uri 'self';">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="emulatorjs.css" rel="stylesheet">
@@ -32,7 +42,7 @@
         <div id="game"></div>
         <!-- 로딩 GIF -->
         <div id="loader">
-            <img src="../docs/loading.gif" alt="로딩 중..." />
+            <img src="./docs/loading.gif" alt="로딩 중..." />
         </div>
     </div>
     <script src="emulator.js" type="text/javascript"></script>
