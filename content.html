@@ -65,23 +65,69 @@
       text-decoration: none;
     }
     
-    #loader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: transparent;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
+    .loader-container {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0, 0, 0, 0.4); /* 투명한 배경 */
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    #loader img {
-      width: 256px;
-      height: 256px;
-    }  
+    .loader-wrapper {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .loader {
+        border: 14px solid #f3f3f3;
+        border-top: 14px solid #ffb3b3;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        animation: spin 2s linear infinite, colorChange 10s linear infinite;
+        box-shadow: 0 0 22px rgba(0, 0, 0, 0.3);
+    }
+
+    .loading-text {
+        font-size: 16px;
+        color: #c0d8cb;
+        font-weight: bold;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        animation: blinkText 1s infinite alternate;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    @keyframes colorChange {
+        0% { border-top-color: #ffb3b3; }
+        10% { border-top-color: #b3ffb3; }
+        20% { border-top-color: #b3d9ff; }
+        30% { border-top-color: #fff0b3; }
+        40% { border-top-color: #ffc0cb; }
+        50% { border-top-color: #f0e68c; }
+        60% { border-top-color: #d3d3d3; }
+        70% { border-top-color: #ffb6c1; }
+        80% { border-top-color: #e0ffff; }
+        90% { border-top-color: #f5deb3; }
+        100% { border-top-color: #ffb3b3; }
+    }
+
+    @keyframes blinkText {
+        0% { opacity: 0.2; }
+        100% { opacity: 1; }
+    }
   </style>
 </head>
 
@@ -94,9 +140,12 @@
         sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts"></iframe>
       <a href="#" class="ad-close"></a>
     </div-->
-    <!-- 로딩 GIF -->
-    <div id="loader">
-        <img src="./docs/loading.gif" alt="로딩 중..." />
+    <!-- 로딩 화면 -->
+    <div class="loader-container" id="loading">
+        <div class="loader-wrapper">
+            <div class="loader"></div>
+            <div class="loading-text">LOADING</div>
+        </div>
     </div>
     <div style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);z-index: 1;"><a href="#"
         id="ejs-start-game" style="display:none">START</a></div>
@@ -155,6 +204,9 @@
             }, '*');
             initSent = true;
           }
+          const loader = document.getElementById('loading');
+          if (loader) loader.style.display = 'none';
+
           document.querySelector('#ejs-start-game').style.display = 'block';
           // START 버튼 표시 제거 → 자동 실행 추가          
           //setTimeout(() => {
@@ -178,7 +230,7 @@
               //return false;
             //};
           
-          const loader = document.getElementById('loader');
+          const loader = document.getElementById('loading');
           if (loader) loader.remove(); // 로딩 제거
 
           window.parent.postMessage({
@@ -235,6 +287,8 @@
         document.querySelector('#ejs-start-game').parentNode
           .removeChild(document.querySelector('#ejs-start-game'));
       }
+      const loader = document.getElementById('loading');
+      if (loader) loader.style.display = 'block';
       return false;
     };
   </script>
