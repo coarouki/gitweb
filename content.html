@@ -155,13 +155,13 @@
             }, '*');
             initSent = true;
           }
-          //document.querySelector('#ejs-start-game').style.display = 'block';
+          document.querySelector('#ejs-start-game').style.display = 'block';
           // START 버튼 표시 제거 → 자동 실행 추가          
-          setTimeout(() => {
-            gameFrame.contentWindow.postMessage({
-              'act': 'ejs-game-start'
-            }, '*');
-          }, 500);
+          //setTimeout(() => {
+          //  gameFrame.contentWindow.postMessage({
+          //    'act': 'ejs-game-start'
+          //  }, '*');
+          //}, 1000);
         }
         if (e.data.act == 'ejs-game-started') {
           if (e.source != gameFrame.contentWindow)
