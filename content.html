@@ -68,7 +68,7 @@
     .loader-container {
         position: absolute;
         top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(0, 0, 0, 0.4); /* 투명한 배경 */
+        background: rgba(64, 64, 64, 0); /* 투명한 배경 */
         z-index: 9999;
         display: flex;
         justify-content: center;
@@ -141,7 +141,7 @@
       <a href="#" class="ad-close"></a>
     </div-->
     <!-- 로딩 화면 -->
-    <div class="loader-container" id="loading" style="position: absolute;top: 50%; left: 50%;">
+    <div class="loader-container" id="loading" style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);z-index: 1;">
         <div class="loader-wrapper">
             <div class="loader"></div>
             <div class="loading-text">LOADING</div>
