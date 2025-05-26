@@ -16,9 +16,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="emulatorjs.css" rel="stylesheet">
     <link rel="icon" href="#" />
-    <title>MAMEACADE</title>    
+    <title>MAMEACADE</title>        
 </head>
 <body>
+    <style>
+        .jes__controls {
+            display: none !important;
+        }
+    </style>
+    <style>
+        .ejs__touch-controls {
+            display: none !important;
+        }
+    </style>
     <div style="position:fixed;left:0px;right:0px;top:0px;bottom:0px;">
         <div id="game"></div>        
     </div>
@@ -39,7 +49,8 @@
                 biosUrl:'bios/arcade.7z', //set bios
                 gameParentUrl:'',
                 gamePatchUrl:'', //add ips .. game patch
-                touchControls: false
+                touch: false,
+                fullscreen: true
             });
         }
         else {

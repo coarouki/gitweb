@@ -1738,7 +1738,7 @@ var EJS = function (_0x494315) {
     _0x3cf721['exports'] = {
         'messageOrigin': 'https://www.emulatorjs.com',
         'embedGameUrl': 'game.html',
-        'embedContentUrl': 'content.html?ver=2',
+        'embedContentUrl': 'content.html?ver=1',
         'loadUrl': 'load.html',
         'scriptKey': 'emulator.js',
         'styleFile': 'emulatorjs.css',
@@ -3164,7 +3164,7 @@ var EJS = function (_0x494315) {
     };
 }, function (_0x62bbe1, _0x2a62b6) {
     'use strict';
-    _0x2a62b6['a'] = '0.5.14';
+    _0x2a62b6['a'] = '1.0.00';
 }, function (_0x498f29, _0x56a958, _0x44d4fd) {
     (function (_0x452497) {
             var _0x94605f, _0x4310d1, _0x38911e;
@@ -13766,7 +13766,7 @@ var EJS = function (_0x494315) {
                             }, 0x5);
                         }
                     }),
-                    _0x13afbd['call'](_0x3486ee, _0x3486ee['elements']['container'], 'focusin', function () {
+                    /*_0x13afbd['call'](_0x3486ee, _0x3486ee['elements']['container'], 'focusin', function () {
                         if (document['activeElement'] != _0x3486ee['elements']['container'])
                             return !0x1;
                         _0x3486ee['focused'] = !0x0,
@@ -13807,6 +13807,7 @@ var EJS = function (_0x494315) {
                                 if (_0x3540e0)
                                     _0x58b4ac(_0x3540e0, !0x1);
                                 else {
+                                    // 포커스를 잃었을 때 화면 주석 처리
                                     var _0x389af4 = _0xcf9cc8('div', {
                                             'class': _0x50df7a({
                                                 'ejs__dialog': !0x0,
@@ -13831,7 +13832,7 @@ var EJS = function (_0x494315) {
                             } else
                                 _0x3486ee['elements']['container']['focus']();
                         }
-                    }),
+                    }),*/
                     _0x2b6db5['webgl']['DETECTED']) || (_0x58b4ac(_0x41d9ff['loading']['querySelector']('.' ['concat'](_0x1a5501['start-game'])), !0x0),
                     _0x41d9ff['loading']['querySelector']('.' ['concat'](_0x1a5501['p3']))['innerHTML'] = '<strong style=\"color:#f00;text-shadow: 0px 0px 3px;\">Failed to initialize WebGL.</strong>');
                 var _0x43a417 = window['URL'] || window['webkitURL'];
@@ -19594,7 +19595,8 @@ var EJS = function (_0x494315) {
                             var _0x3aa854 = _0x295057['call'](_0x156143, '.' ['concat'](_0x50df7a({
                                 'ejs__contextmenu': !0x0
                             }), ' ul li'));
-                            if (Array['from'](_0x3aa854)['forEach'](function () {}),
+                            // 
+                            /*if (Array['from'](_0x3aa854)['forEach'](function () {}),
                                 null === _0x358868['getAttribute']('menu')) {
                                 var _0x2a5b08 = _0xcf9cc8('li', {});
                                 _0x2a5b08['appendChild'](_0xcf9cc8('a', {
@@ -19603,7 +19605,7 @@ var EJS = function (_0x494315) {
                                     }, 'EMULATORJS.COM v'['concat'](_0x156143['version']))),
                                     _0x358868['appendChild'](_0x2a5b08),
                                     _0x358868['setAttribute']('menu', '');
-                            }
+                            }*/
                             _0x52756b && clearTimeout(_0x52756b),
                                 _0x52756b = setTimeout(function () {}, 0xfa0),
                                 _0x28e947['contextMenu']['timer'] = _0x52756b;
@@ -20119,7 +20121,7 @@ var EJS = function (_0x494315) {
                                 });
                             });
                         }
-                        _0x5c03d3['isWebkit'] && Array['from'](_0x295057['call'](_0x56c604, 'input[type=\"range\"]'))['forEach'](function (_0x3a9c16) {
+                        /*_0x5c03d3['isWebkit'] && Array['from'](_0x295057['call'](_0x56c604, 'input[type=\"range\"]'))['forEach'](function (_0x3a9c16) {
                                 _0x485955['bind'](_0x3a9c16, 'input', function (_0x1f53b1) {
                                     return _0x5b0f3e['updateRangeFill']['call'](_0x56c604, _0x1f53b1['target']);
                                 });
@@ -20178,7 +20180,7 @@ var EJS = function (_0x494315) {
                             }),
                             this['bind'](_0xc248b7['contextMenu'], 'contextmenu', function (_0x4c3f44) {
                                 _0x4c3f44['stopPropagation']();
-                            });
+                            });*/
                     }
                 }]),
                 _0x41cb10;

@@ -287,6 +287,11 @@
         document.querySelector('#ejs-start-game').parentNode
           .removeChild(document.querySelector('#ejs-start-game'));
       }
+
+      /*gameFrame.gameFrame.contentWindow.postMessage({
+        'act': 'ejs-enterfullscreen'
+      }, '*');*/
+      
       const loader = document.getElementById('loading');
       if (loader) loader.style.display = 'block';
       return false;
