@@ -141,7 +141,7 @@
       <a href="#" class="ad-close"></a>
     </div-->
     <!-- 로딩 화면 -->
-    <div class="loader-container" id="loading" style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);z-index: 1;">
+    <div class="loader-container" id="loading" style="display:none; position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);z-index: 1;">
         <div class="loader-wrapper">
             <div class="loader"></div>
             <div class="loading-text">LOADING</div>
@@ -204,16 +204,22 @@
             }, '*');
             initSent = true;
           }
-          const loader = document.getElementById('loading');
-          if (loader) loader.style.display = 'none';
+          //const loader = document.getElementById('loading');
+          //if (loader) loader.style.display = 'none';
 
           document.querySelector('#ejs-start-game').style.display = 'block';
           // START 버튼 표시 제거 → 자동 실행 추가          
-          //setTimeout(() => {
-          //  gameFrame.contentWindow.postMessage({
-          //    'act': 'ejs-game-start'
-          //  }, '*');
-          //}, 1000);
+          /*setTimeout(() => {
+            gameFrame.contentWindow.postMessage({
+              'act': 'ejs-game-start'
+            }, '*');
+            if (document.querySelector('#ejs-start-game').remove) {
+              document.querySelector('#ejs-start-game').remove();
+            } else {
+              document.querySelector('#ejs-start-game').parentNode
+                .removeChild(document.querySelector('#ejs-start-game'));
+            }
+          }, 1000);*/
         }
         if (e.data.act == 'ejs-game-started') {
           if (e.source != gameFrame.contentWindow)
