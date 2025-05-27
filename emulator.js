@@ -1738,7 +1738,7 @@ var EJS = function (_0x494315) {
     _0x3cf721['exports'] = {
         'messageOrigin': 'https://www.emulatorjs.com',
         'embedGameUrl': 'game.html',
-        'embedContentUrl': 'content.html?ver=1',
+        'embedContentUrl': 'content.html?ver=2',
         'loadUrl': 'load.html',
         'scriptKey': 'emulator.js',
         'styleFile': 'emulatorjs.css',
@@ -3164,7 +3164,7 @@ var EJS = function (_0x494315) {
     };
 }, function (_0x62bbe1, _0x2a62b6) {
     'use strict';
-    _0x2a62b6['a'] = '1.0.00';
+    _0x2a62b6['a'] = '0.5.14';
 }, function (_0x498f29, _0x56a958, _0x44d4fd) {
     (function (_0x452497) {
             var _0x94605f, _0x4310d1, _0x38911e;
@@ -11982,7 +11982,7 @@ var EJS = function (_0x494315) {
                 'reset': 'Reset',
                 'disabled': 'Disabled',
                 'enabled': 'Enabled',
-                'start': 'START'
+                'playNow': 'Play Now'
             },
             'listeners': {
                 'play': null,
@@ -13566,7 +13566,7 @@ var EJS = function (_0x494315) {
                         'p4': !0x0
                     })
                 };
-                (_0x41d9ff['loading']['innerHTML'] = ('\n        <div>\n        <div class=\"')['concat'](_0x1a5501['ad'], '\" style=\"display:block !important;width:300px !important;z-index:1 !important;height:250px !important;visibility: visible !important;\">\n        <div class=\"')['concat'](_0x1a5501['close-ad'], '\" hidden><a href=\"#\" onclick=\"return false\"></a></div>\n        \n        </div>\n        <div class=\"')['concat'](_0x1a5501['loading-info'], '\" style=\"position: absolute;bottom: 20px;left: 50%;transform: translateX(-50%);z-index:2\">\n        <div class=\"')['concat'](_0x1a5501['p1'], '\"></div>\n        <div class=\"')['concat'](_0x1a5501['p2'], '\"></div>\n        <div class=\"')['concat'](_0x1a5501['p3'], '\"></div>\n        </div>\n        <div style=\"position: absolute;bottom: 20px;left: 50%;transform: translateX(-50%);width: 100%;text-align: center;z-index: 1;\">\n        <a href=\"#\" onclick=\"return false\" class=\"')['concat'](_0x1a5501['start-game'], '\">')['concat'](_0x25b1eb('start', _0x3486ee['config']), '</a>\n\n        <div style=\"font-size: 18px;padding-top:5px;display:none\">\n        Save Game Roms: \n        <label for=\"ejs-save-rom-1\"><input id=\"ejs-save-rom-1\" name=\"ejs-save-rom\" type=\"radio\"> Local Directory </label>\n        <label for=\"ejs-save-rom-2\"><input id=\"ejs-save-rom-2\" name=\"ejs-save-rom\" type=\"radio\"> Browser Storage </label>\n        <label for=\"ejs-save-rom-3\"><input id=\"ejs-save-rom-3\" name=\"ejs-save-rom\" type=\"radio\"> Don\'t Save </label>\n        </div>\n\n        </div>\n        </div>'),
+                (_0x41d9ff['loading']['innerHTML'] = ('\n        <div>\n        <div class=\"')['concat'](_0x1a5501['ad'], '\" style=\"display:block !important;width:300px !important;z-index:1 !important;height:250px !important;visibility: visible !important;\">\n        <div class=\"')['concat'](_0x1a5501['close-ad'], '\" hidden><a href=\"#\" onclick=\"return false\"></a></div>\n        \n        </div>\n        <div class=\"')['concat'](_0x1a5501['loading-info'], '\" style=\"position: absolute;bottom: 20px;left: 50%;transform: translateX(-50%);z-index:2\">\n        <div class=\"')['concat'](_0x1a5501['p1'], '\"></div>\n        <div class=\"')['concat'](_0x1a5501['p2'], '\"></div>\n        <div class=\"')['concat'](_0x1a5501['p3'], '\"></div>\n        </div>\n        <div style=\"position: absolute;bottom: 20px;left: 50%;transform: translateX(-50%);width: 100%;text-align: center;z-index: 1;\">\n        <a href=\"#\" onclick=\"return false\" class=\"')['concat'](_0x1a5501['start-game'], '\">')['concat'](_0x25b1eb('playNow', _0x3486ee['config']), '</a>\n\n        <div style=\"font-size: 18px;padding-top:5px;display:none\">\n        Save Game Roms: \n        <label for=\"ejs-save-rom-1\"><input id=\"ejs-save-rom-1\" name=\"ejs-save-rom\" type=\"radio\"> Local Directory </label>\n        <label for=\"ejs-save-rom-2\"><input id=\"ejs-save-rom-2\" name=\"ejs-save-rom\" type=\"radio\"> Browser Storage </label>\n        <label for=\"ejs-save-rom-3\"><input id=\"ejs-save-rom-3\" name=\"ejs-save-rom\" type=\"radio\"> Don\'t Save </label>\n        </div>\n\n        </div>\n        </div>'),
                     _0x41d9ff['adCloseId'] = 'ejs-' ['concat'](_0x29ec97(0x5f5e100 * Math['random']()) + 0x1),
                     _0x41d9ff['startGameId'] = 'ejs-'['concat'](_0x29ec97(0x5f5e100 * Math['random']()) + 0x1),
                     _0x41d9ff['loading']['querySelector']('.' ['concat'](_0x1a5501['close-ad']))['setAttribute']('id', _0x41d9ff['adCloseId']),
@@ -13766,7 +13766,7 @@ var EJS = function (_0x494315) {
                             }, 0x5);
                         }
                     }),
-                    /*_0x13afbd['call'](_0x3486ee, _0x3486ee['elements']['container'], 'focusin', function () {
+                    _0x13afbd['call'](_0x3486ee, _0x3486ee['elements']['container'], 'focusin', function () {
                         if (document['activeElement'] != _0x3486ee['elements']['container'])
                             return !0x1;
                         _0x3486ee['focused'] = !0x0,
@@ -13807,8 +13807,7 @@ var EJS = function (_0x494315) {
                                 if (_0x3540e0)
                                     _0x58b4ac(_0x3540e0, !0x1);
                                 else {
-                                    // 포커스를 잃었을 때 화면 주석 처리
-                                    var _0x389af4 = _0xcf9cc8('div', {
+                                    /*var _0x389af4 = _0xcf9cc8('div', {
                                             'class': _0x50df7a({
                                                 'ejs__dialog': !0x0,
                                                 'ejs__focus_notice__container': !0x0
@@ -13826,13 +13825,13 @@ var EJS = function (_0x494315) {
                                         _0x389af4['appendChild'](_0x50f63f),
                                         _0x205e53['call'](_0x40de6c, '.' ['concat'](_0x50df7a({
                                             'ejs__dialogs': !0x0
-                                        })))['appendChild'](_0x389af4);
+                                        })))['appendChild'](_0x389af4);*/
                                 }
                                 _0x3486ee['focused'] = !0x1;
                             } else
                                 _0x3486ee['elements']['container']['focus']();
                         }
-                    }),*/
+                    }),
                     _0x2b6db5['webgl']['DETECTED']) || (_0x58b4ac(_0x41d9ff['loading']['querySelector']('.' ['concat'](_0x1a5501['start-game'])), !0x0),
                     _0x41d9ff['loading']['querySelector']('.' ['concat'](_0x1a5501['p3']))['innerHTML'] = '<strong style=\"color:#f00;text-shadow: 0px 0px 3px;\">Failed to initialize WebGL.</strong>');
                 var _0x43a417 = window['URL'] || window['webkitURL'];
@@ -19595,8 +19594,7 @@ var EJS = function (_0x494315) {
                             var _0x3aa854 = _0x295057['call'](_0x156143, '.' ['concat'](_0x50df7a({
                                 'ejs__contextmenu': !0x0
                             }), ' ul li'));
-                            // 
-                            /*if (Array['from'](_0x3aa854)['forEach'](function () {}),
+                            if (Array['from'](_0x3aa854)['forEach'](function () {}),
                                 null === _0x358868['getAttribute']('menu')) {
                                 var _0x2a5b08 = _0xcf9cc8('li', {});
                                 _0x2a5b08['appendChild'](_0xcf9cc8('a', {
@@ -19605,7 +19603,7 @@ var EJS = function (_0x494315) {
                                     }, 'EMULATORJS.COM v'['concat'](_0x156143['version']))),
                                     _0x358868['appendChild'](_0x2a5b08),
                                     _0x358868['setAttribute']('menu', '');
-                            }*/
+                            }
                             _0x52756b && clearTimeout(_0x52756b),
                                 _0x52756b = setTimeout(function () {}, 0xfa0),
                                 _0x28e947['contextMenu']['timer'] = _0x52756b;
@@ -20121,7 +20119,7 @@ var EJS = function (_0x494315) {
                                 });
                             });
                         }
-                        /*_0x5c03d3['isWebkit'] && Array['from'](_0x295057['call'](_0x56c604, 'input[type=\"range\"]'))['forEach'](function (_0x3a9c16) {
+                        _0x5c03d3['isWebkit'] && Array['from'](_0x295057['call'](_0x56c604, 'input[type=\"range\"]'))['forEach'](function (_0x3a9c16) {
                                 _0x485955['bind'](_0x3a9c16, 'input', function (_0x1f53b1) {
                                     return _0x5b0f3e['updateRangeFill']['call'](_0x56c604, _0x1f53b1['target']);
                                 });
@@ -20180,7 +20178,7 @@ var EJS = function (_0x494315) {
                             }),
                             this['bind'](_0xc248b7['contextMenu'], 'contextmenu', function (_0x4c3f44) {
                                 _0x4c3f44['stopPropagation']();
-                            });*/
+                            });
                     }
                 }]),
                 _0x41cb10;
