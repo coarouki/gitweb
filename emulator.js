@@ -12990,7 +12990,8 @@ var EJS = function (_0x494315) {
             'cheatString': '',
             'cheatPath': '',
             'cheatFileName': '',
-            'isMobileDevice': !!/Android|webOS|iPhone|iPad|iPod|BB10|BlackBerry|IEMobile|Opera Mini|Mobile|mobile/i ['test'](navigator['userAgent'] || ''),
+            'isMobileDevice': false,
+            //'isMobileDevice': !!/Android|webOS|iPhone|iPad|iPod|BB10|BlackBerry|IEMobile|Opera Mini|Mobile|mobile/i ['test'](navigator['userAgent'] || ''),
             'create2': function () {
                 var _0x5d6dee = this,
                     _0x186417 = this,
@@ -13806,8 +13807,8 @@ var EJS = function (_0x494315) {
                                 })));
                                 if (_0x3540e0)
                                     _0x58b4ac(_0x3540e0, !0x1);
-                                else {
-                                    /*var _0x389af4 = _0xcf9cc8('div', {
+                                /*else {
+                                    var _0x389af4 = _0xcf9cc8('div', {
                                             'class': _0x50df7a({
                                                 'ejs__dialog': !0x0,
                                                 'ejs__focus_notice__container': !0x0
@@ -13825,8 +13826,8 @@ var EJS = function (_0x494315) {
                                         _0x389af4['appendChild'](_0x50f63f),
                                         _0x205e53['call'](_0x40de6c, '.' ['concat'](_0x50df7a({
                                             'ejs__dialogs': !0x0
-                                        })))['appendChild'](_0x389af4);*/
-                                }
+                                        })))['appendChild'](_0x389af4);
+                                }*/
                                 _0x3486ee['focused'] = !0x1;
                             } else
                                 _0x3486ee['elements']['container']['focus']();
@@ -17794,7 +17795,7 @@ var EJS = function (_0x494315) {
                 }
             },
             'toggleVirtualGamepad': function (_0x2b8a6d) {
-                var _0x4f4222 = this;
+                /*var _0x4f4222 = this;
                 if (null === _0x27a06b['virtualGamepadContainer']) {
                     var _0x1ea7f5 = 0x2;
                     switch (_0x4f4222['system']) {
@@ -18044,7 +18045,7 @@ var EJS = function (_0x494315) {
                             }
                         });
                     var _0x483c4e = _0x50df7a({
-                            'virtual-gamepad': !0x0
+                            'virtual-gamepad': !0x1
                         }),
                         _0x2e3848 = _0x50df7a({
                             'touch': !0x0
@@ -18152,7 +18153,7 @@ var EJS = function (_0x494315) {
                             });
                         });
                 } else
-                    _0x58b4ac(_0x27a06b['virtualGamepadContainer'], !_0x2b8a6d);
+                    _0x58b4ac(_0x27a06b['virtualGamepadContainer'], !_0x2b8a6d);*/
             },
             'setup': function () {
                 var _0x44ad1e = this;
@@ -18436,7 +18437,7 @@ var EJS = function (_0x494315) {
                         'disabled': 'Disabled',
                         'enabled': 'Enabled'
                     },
-                    'default': 'enabled'
+                    'default': 'Disabled'
                 }
             },
             'defaultCoreOptionsValues': function () {
@@ -19217,7 +19218,7 @@ var EJS = function (_0x494315) {
                     this['elements']['widgets']['netplay'] = _0x2e300a;
             },
             'setControlToggleWidgets': function () {
-                var _0x4affc3 = this,
+                /*var _0x4affc3 = this,
                     _0x3f812c = this,
                     _0x289938 = _0xcf9cc8('div', {
                         'class': _0x50df7a({
@@ -19366,7 +19367,7 @@ var EJS = function (_0x494315) {
                                 }), ', .')['concat'](_0x50df7a({
                                     'dpad-container': !0x0
                                 }), ', .')['concat'](_0x50df7a({
-                                    'virtual-gamepad': !0x0
+                                    'virtual-gamepad': !0x1
                                 }), ' .')['concat'](_0x50df7a({
                                     'joystick': !0x0
                                 })))['forEach'](function (_0x424907) {
@@ -19402,7 +19403,7 @@ var EJS = function (_0x494315) {
                                         }), ', .')['concat'](_0x50df7a({
                                             'dpad-container': !0x0
                                         }), ', .')['concat'](_0x50df7a({
-                                            'virtual-gamepad': !0x0
+                                            'virtual-gamepad': !0x1
                                         }), ' .')['concat'](_0x50df7a({
                                             'joystick': !0x0
                                         })))['forEach'](function (_0x35b287) {
@@ -19419,7 +19420,7 @@ var EJS = function (_0x494315) {
                                         }), ', .')['concat'](_0x50df7a({
                                             'dpad-container': !0x0
                                         }), ', .')['concat'](_0x50df7a({
-                                            'virtual-gamepad': !0x0
+                                            'virtual-gamepad': !0x1
                                         }), ' .')['concat'](_0x50df7a({
                                             'joystick': !0x0
                                         })))['forEach'](function (_0x426012) {
@@ -19440,7 +19441,7 @@ var EJS = function (_0x494315) {
                                         }), ', .')['concat'](_0x50df7a({
                                             'dpad-container': !0x0
                                         }), ', .')['concat'](_0x50df7a({
-                                            'virtual-gamepad': !0x0
+                                            'virtual-gamepad': !0x1
                                         }), ' .')['concat'](_0x50df7a({
                                             'joystick': !0x0
                                         })))['forEach'](function (_0x5c4a73) {
@@ -19476,7 +19477,7 @@ var EJS = function (_0x494315) {
                                 }), ', .')['concat'](_0x50df7a({
                                     'dpad-container': !0x0
                                 }), ', .')['concat'](_0x50df7a({
-                                    'virtual-gamepad': !0x0
+                                    'virtual-gamepad': !0x1
                                 }), ' .')['concat'](_0x50df7a({
                                     'joystick': !0x0
                                 })))['forEach'](function (_0x43f0b1) {
@@ -19547,7 +19548,7 @@ var EJS = function (_0x494315) {
                                     });
                                 });
                         }
-                    });
+                    });*/
             },
             'setNetplay': function (_0x2e38bb) {
                 _0x2e38bb['appendChild'](_0x28e947['createButton']['call'](this, 'netplay', {
@@ -19582,7 +19583,7 @@ var EJS = function (_0x494315) {
                             'ejs__contextmenu': !0x0
                         }), ' ul'));
                         if (_0x4c834a) {
-                            _0x28e947['contextMenu']['style']['display'] = 'block',
+                            _0x28e947['contextMenu']['style']['display'] = 'none',
                                 _0x28e947['contextMenu']['style']['left'] = '' ['concat'](_0x39f507['layerX'], 'px'),
                                 _0x28e947['contextMenu']['style']['top'] = '' ['concat'](_0x39f507['layerY'], 'px'),
                                 _0x28e947['contextMenu']['style']['zIndex'] = -0x1;
@@ -20125,20 +20126,20 @@ var EJS = function (_0x494315) {
                                 });
                             }),
                             this['bind'](_0xc248b7['inputs']['volume'], _0x24719b, function (_0x5495f1) {
-                                _0x56c604['volume'] = _0x5495f1['target']['value'];
+                                //_0x56c604['volume'] = _0x5495f1['target']['value'];
                             }, 'volume'),
                             this['bind'](_0xc248b7['controls'], 'mouseenter mouseleave', function (_0x2f71b9) {
-                                _0xc248b7['controls']['hover'] = 'mouseleave' === _0x2f71b9['type'] && null === _0x2f71b9['toElement'] || !_0x56c604['touch'] && 'mouseenter' === _0x2f71b9['type'];
+                                //_0xc248b7['controls']['hover'] = 'mouseleave' === _0x2f71b9['type'] && null === _0x2f71b9['toElement'] || !_0x56c604['touch'] && 'mouseenter' === _0x2f71b9['type'];
                             }),
                             this['bind'](_0xc248b7['controls'], 'mousedown mouseup touchstart touchend touchcancel', function (_0x54cfdf) {
                                 if (['mousedown', 'touchstart']['includes'](_0x54cfdf['type'])) {
-                                    _0xc248b7['controls']['pressed'] = !0x0;
-                                    var _0x4c9d14 = _0xc248b7['controls']['getAttribute']('data-timer2');
+                                    //_0xc248b7['controls']['pressed'] = !0x0;
+                                    //var _0x4c9d14 = _0xc248b7['controls']['getAttribute']('data-timer2');
                                     clearTimeout(_0x4c9d14);
                                 } else {
-                                    var _0x27184f = setTimeout(function () {
-                                        _0xc248b7['controls']['pressed'] = !0x1;
-                                    }, 0xfa0);
+                                    //var _0x27184f = setTimeout(function () {
+                                    //    _0xc248b7['controls']['pressed'] = !0x1;
+                                    //}, 0xfa0);
                                     _0xc248b7['controls']['setAttribute']('data-timer2', _0x27184f);
                                 }
                             }),
@@ -20147,7 +20148,7 @@ var EJS = function (_0x494315) {
                                     _0x1faded = _0x56c604['elements'],
                                     _0x3b5779 = 'focusin' === _0x19eed7['type'],
                                     _0x5200c7 = _0x1faded['controls']['getAttribute']('data-timer');
-                                if (_0x4211ec(_0x1faded['controls'], _0x474cb8['classNames']['noTransition'], _0x3b5779),
+                                /*if (_0x4211ec(_0x1faded['controls'], _0x474cb8['classNames']['noTransition'], _0x3b5779),
                                     _0x5d6e25['toggleControls']['call'](_0x56c604, _0x3b5779),
                                     _0x3b5779) {
                                     setTimeout(function () {
@@ -20159,9 +20160,9 @@ var EJS = function (_0x494315) {
                                             return _0x5d6e25['toggleControls']['call'](_0x56c604, !0x1);
                                         }, _0x69869),
                                         _0x1faded['controls']['setAttribute']('data-timer', _0x5200c7);
-                                }
+                                }*/
                             }),
-                            this['bind'](_0xc248b7['inputs']['volume'], 'wheel', function (_0x427f47) {
+                            this['bind'](_0xc248b7['inputs']['volume'], 'wheel', function (_0x427f47) {/*
                                 var _0x6a3b9b = _0x427f47['webkitDirectionInvertedFromDevice'],
                                     _0x47fac4 = _0x10dd96([_0x427f47['deltaX'], -_0x427f47['deltaY']]['map'](function (_0x4c09b9) {
                                         return _0x6a3b9b ? -_0x4c09b9 : _0x4c09b9;
@@ -20171,13 +20172,13 @@ var EJS = function (_0x494315) {
                                     _0x42694a = Math['sign'](_0x460b8d(_0x2ce63c) > _0x460b8d(_0x4ee889) ? _0x2ce63c : _0x4ee889);
                                 _0x56c604['increaseVolume'](_0x42694a / 0x32);
                                 var _0x55b6f9 = _0x56c604['game']['volume'];
-                                (0x1 === _0x42694a && 0x1 > _0x55b6f9 || -0x1 === _0x42694a && 0x0 < _0x55b6f9) && _0x427f47['preventDefault']();
+                                (0x1 === _0x42694a && 0x1 > _0x55b6f9 || -0x1 === _0x42694a && 0x0 < _0x55b6f9) && _0x427f47['preventDefault']();*/
                             }, 'volume', !0x1),
                             this['bind'](_0xc248b7['controls'], 'contextmenu', function (_0x550bbd) {
-                                _0x550bbd['stopPropagation']();
+                                //_0x550bbd['stopPropagation']();
                             }),
                             this['bind'](_0xc248b7['contextMenu'], 'contextmenu', function (_0x4c3f44) {
-                                _0x4c3f44['stopPropagation']();
+                                //_0x4c3f44['stopPropagation']();
                             });
                     }
                 }]),
